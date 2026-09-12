@@ -1,6 +1,6 @@
 {
-  "generated_at": null,
-  "overall": "CHECKING",
+  "generated_at": "2026-09-12T12:32:55Z",
+  "overall": "PARTIAL_OUTAGE",
   "services": [
     {
       "id": "gba_main_site",
@@ -10,16 +10,16 @@
       "check_type": "http",
       "verified_note": "Confirms the main citizen-facing website is reachable. Does not verify any specific service.",
       "status": "UNKNOWN",
-      "last_checked": null,
+      "last_checked": "2026-09-12T12:32:55Z",
       "last_success": null,
-      "last_failure": null,
-      "response_time_ms": null,
+      "last_failure": "2026-09-12T12:32:55Z",
+      "response_time_ms": 20556,
       "http_status": null,
-      "last_error_type": "",
+      "last_error_type": "TIMEOUT",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 0.0,
+      "uptime_7d": 0.0,
+      "uptime_30d": 0.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -44,7 +44,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "DOWN"
       ]
     },
     {
@@ -54,17 +54,17 @@
       "url": "https://bbmptax.karnataka.gov.in/Default.aspx",
       "check_type": "http_keyword",
       "verified_note": "Confirms the property tax portal homepage loads and contains expected content. Actual tax calculation, OTP login, and payment steps are NOT exercised (would require personal data / real transactions).",
-      "status": "UNKNOWN",
-      "last_checked": null,
-      "last_success": null,
+      "status": "OPERATIONAL",
+      "last_checked": "2026-09-12T12:32:55Z",
+      "last_success": "2026-09-12T12:32:55Z",
       "last_failure": null,
-      "response_time_ms": null,
-      "http_status": null,
+      "response_time_ms": 1599,
+      "http_status": 200,
       "last_error_type": "",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 100.0,
+      "uptime_7d": 100.0,
+      "uptime_30d": 100.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -89,7 +89,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "UP"
       ]
     },
     {
@@ -98,18 +98,18 @@
       "category": "Service",
       "url": "https://bbmpeaasthi.karnataka.gov.in/",
       "check_type": "http",
-      "verified_note": "This portal is a JavaScript single-page application, so only front-door server reachability is verified \u2014 not whether the app fully loads or functions inside the browser.",
+      "verified_note": "This portal is a JavaScript single-page application, so only front-door server reachability is verified — not whether the app fully loads or functions inside the browser.",
       "status": "UNKNOWN",
-      "last_checked": null,
+      "last_checked": "2026-09-12T12:32:55Z",
       "last_success": null,
-      "last_failure": null,
-      "response_time_ms": null,
+      "last_failure": "2026-09-12T12:32:55Z",
+      "response_time_ms": 749,
       "http_status": null,
-      "last_error_type": "",
+      "last_error_type": "SSL_ERROR",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 0.0,
+      "uptime_7d": 0.0,
+      "uptime_30d": 0.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -134,7 +134,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "DOWN"
       ]
     },
     {
@@ -145,16 +145,16 @@
       "check_type": "http",
       "verified_note": "Confirms the new trade license registration page is reachable. Form submission and payment are not tested.",
       "status": "UNKNOWN",
-      "last_checked": null,
+      "last_checked": "2026-09-12T12:32:55Z",
       "last_success": null,
-      "last_failure": null,
-      "response_time_ms": null,
+      "last_failure": "2026-09-12T12:32:55Z",
+      "response_time_ms": 20197,
       "http_status": null,
-      "last_error_type": "",
+      "last_error_type": "TIMEOUT",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 0.0,
+      "uptime_7d": 0.0,
+      "uptime_30d": 0.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -179,7 +179,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "DOWN"
       ]
     },
     {
@@ -190,16 +190,16 @@
       "check_type": "http_keyword",
       "verified_note": "Confirms the renewal page loads with expected content. Form submission and payment are not tested.",
       "status": "UNKNOWN",
-      "last_checked": null,
+      "last_checked": "2026-09-12T12:32:55Z",
       "last_success": null,
-      "last_failure": null,
-      "response_time_ms": null,
+      "last_failure": "2026-09-12T12:32:55Z",
+      "response_time_ms": 20073,
       "http_status": null,
-      "last_error_type": "",
+      "last_error_type": "TIMEOUT",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 0.0,
+      "uptime_7d": 0.0,
+      "uptime_30d": 0.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -224,7 +224,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "DOWN"
       ]
     },
     {
@@ -233,18 +233,18 @@
       "category": "Service",
       "url": "https://bpas.bbmpgov.in/BPAMSClient4/Default.aspx",
       "check_type": "http",
-      "verified_note": "JavaScript single-page application (AutoDCR platform) \u2014 only front-door server reachability is verified, not login or application submission.",
-      "status": "UNKNOWN",
-      "last_checked": null,
-      "last_success": null,
+      "verified_note": "JavaScript single-page application (AutoDCR platform) — only front-door server reachability is verified, not login or application submission.",
+      "status": "OPERATIONAL",
+      "last_checked": "2026-09-12T12:32:55Z",
+      "last_success": "2026-09-12T12:32:55Z",
       "last_failure": null,
-      "response_time_ms": null,
-      "http_status": null,
+      "response_time_ms": 1925,
+      "http_status": 200,
       "last_error_type": "",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 100.0,
+      "uptime_7d": 100.0,
+      "uptime_30d": 100.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -269,7 +269,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "UP"
       ]
     },
     {
@@ -279,17 +279,17 @@
       "url": "https://bbmpenyaya.karnataka.gov.in/",
       "check_type": "http",
       "verified_note": "Confirms the BCCMS/eNyaya objections & appeals portal is reachable.",
-      "status": "UNKNOWN",
-      "last_checked": null,
-      "last_success": null,
+      "status": "OPERATIONAL",
+      "last_checked": "2026-09-12T12:32:55Z",
+      "last_success": "2026-09-12T12:32:55Z",
       "last_failure": null,
-      "response_time_ms": null,
-      "http_status": null,
+      "response_time_ms": 1147,
+      "http_status": 200,
       "last_error_type": "",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 100.0,
+      "uptime_7d": 100.0,
+      "uptime_30d": 100.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -314,7 +314,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "UP"
       ]
     },
     {
@@ -323,18 +323,18 @@
       "category": "Service",
       "url": "https://bbmp.sahaaya.in/",
       "check_type": "http",
-      "verified_note": "JavaScript single-page application \u2014 only front-door server reachability is verified.",
+      "verified_note": "JavaScript single-page application — only front-door server reachability is verified.",
       "status": "UNKNOWN",
-      "last_checked": null,
+      "last_checked": "2026-09-12T12:32:55Z",
       "last_success": null,
-      "last_failure": null,
-      "response_time_ms": null,
+      "last_failure": "2026-09-12T12:32:55Z",
+      "response_time_ms": 626,
       "http_status": null,
-      "last_error_type": "",
+      "last_error_type": "SSL_ERROR",
       "outage_duration_seconds": null,
-      "uptime_24h": null,
-      "uptime_7d": null,
-      "uptime_30d": null,
+      "uptime_24h": 0.0,
+      "uptime_7d": 0.0,
+      "uptime_30d": 0.0,
       "timeline_24h": [
         "UNKNOWN",
         "UNKNOWN",
@@ -359,7 +359,7 @@
         "UNKNOWN",
         "UNKNOWN",
         "UNKNOWN",
-        "UNKNOWN"
+        "DOWN"
       ]
     }
   ],
