@@ -139,16 +139,17 @@ services:
     keyword: null
     verified_note: "JavaScript single-page application — only front-door server reachability is verified."
     enabled: true
-   - id: test_telegram_check
-     name: "TEST - Telegram Notification Check"
-     url: "https://this-domain-does-not-exist-12345.invalid/"
-     category: "Service"
-     check_type: "http"
-     expect_status: [200]
-     keyword: null
-     verified_note: "Temporary test entry - safe to delete after confirming Telegram works."
-     enabled: true
-     
+
+  - id: test_telegram_check
+    name: "TEST - Telegram Notification Check"
+    url: "https://this-domain-does-not-exist-12345.invalid/"
+    category: "Service"
+    check_type: "http"
+    expect_status: [200]
+    keyword: null
+    verified_note: "Temporary test entry - safe to delete after confirming Telegram works."
+    enabled: true
+
 # -----------------------------------------------------------------------------
 # EXCLUDED / duplicate / legacy links found during research (documented, not
 # monitored, to avoid noisy or misleading results):
