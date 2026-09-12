@@ -38,3 +38,12 @@
 {"ts": "2026-09-12T20:00:03Z", "service_id": "building_permission", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1584, "error_type": ""}
 {"ts": "2026-09-12T20:00:03Z", "service_id": "bccms", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 956, "error_type": ""}
 {"ts": "2026-09-12T20:00:03Z", "service_id": "grievance_sahaaya", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 536, "error_type": "SSL_ERROR"}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "gba_main_site", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 20538, "error_type": "TIMEOUT"}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "property_tax", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1149, "error_type": ""}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "e_khata", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 923, "error_type": "SSL_ERROR"}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "trade_license", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 20115, "error_type": "TIMEOUT"}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "trade_license_renewal", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 20048, "error_type": "TIMEOUT"}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "building_permission", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1680, "error_type": ""}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "bccms", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1268, "error_type": ""}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "grievance_sahaaya", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 580, "error_type": "SSL_ERROR"}
+{"ts": "2026-09-12T20:30:29Z", "service_id": "test_telegram_check", "health": "down", "status_after": "UNKNOWN", "http_status": null, "response_time_ms": 4, "error_type": "DNS_ERROR"}
