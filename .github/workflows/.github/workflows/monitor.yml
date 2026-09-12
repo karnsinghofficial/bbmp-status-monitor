@@ -1,0 +1,70 @@
+name: BBMP/GBA Status Monitor
+
+# Free scheduling: GitHub Actions cron on a PUBLIC repo does not consume any
+# billed minutes (public repos get unlimited free Actions minutes). Private
+# repos get 2,000 free minutes/month on the Free plan - this job takes well
+# under 1 minute per run, so even on a private repo ~5-minute checks
+# (~8,640 runs/month) would comfortably fit inside the free allowance
+# (see README "Cost & limits" section for the exact math).
+on:
+  schedule:
+    # GitHub's scheduler is best-effort and does not guarantee exact timing,
+    # especially during periods of high platform load - actual intervals may
+    # occasionally stretch to 10-15 minutes. This is a known free-tier
+    # limitation documented in the README.
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {}   # lets you click "Run workflow" in the Actions tab
+  push:
+    paths:
+      - "config/services.yaml"
+      - "scripts/**"
+      - ".github/workflows/monitor.yml"
+
+# Avoid overlapping runs stepping on each other's data commits.
+concurrency:
+  group: bbmp-status-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # needed so the workflow can commit updated data/*.json
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run status checks
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python scripts/monitor.py --config config/services.yaml --data-dir docs/data
+
+      - name: Commit updated status data
+        run: |
+          git config user.name "bbmp-status-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/status.json docs/data/incidents.json docs/data/state.json docs/data/history.jsonl
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Update status data [skip ci] $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git push
+          fi
