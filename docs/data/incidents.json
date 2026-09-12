@@ -1,5 +1,13 @@
 [
   {
+    "service_id": "test_telegram_check",
+    "service_name": "TEST - Telegram Notification Check",
+    "started_at": "2026-09-12T20:52:37Z",
+    "resolved_at": null,
+    "duration_seconds": null,
+    "reason": "DNS_ERROR: DNS resolution failed"
+  },
+  {
     "service_id": "grievance_sahaaya",
     "service_name": "Citizen Grievance (Sahaaya 2.0 / Namma Bengaluru)",
     "started_at": "2026-09-12T15:46:57Z",
