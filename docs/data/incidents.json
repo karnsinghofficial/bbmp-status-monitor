@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "service_id": "grievance_sahaaya",
+    "service_name": "Citizen Grievance (Sahaaya 2.0 / Namma Bengaluru)",
+    "started_at": "2026-09-12T15:46:57Z",
+    "resolved_at": null,
+    "duration_seconds": null,
+    "reason": "SSL_ERROR: HTTPSConnectionPool(host='bbmp.sahaaya.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'bbmp.sahaaya.in'. (_ssl.c:1010)\")))"
+  },
+  {
+    "service_id": "trade_license_renewal",
+    "service_name": "Trade License Renewal",
+    "started_at": "2026-09-12T15:46:57Z",
+    "resolved_at": null,
+    "duration_seconds": null,
+    "reason": "TIMEOUT: Request timed out after 20s"
+  },
+  {
+    "service_id": "trade_license",
+    "service_name": "Trade License (New Registration)",
+    "started_at": "2026-09-12T15:46:57Z",
+    "resolved_at": null,
+    "duration_seconds": null,
+    "reason": "TIMEOUT: Request timed out after 20s"
+  },
+  {
+    "service_id": "e_khata",
+    "service_name": "e-Aasthi / e-Khata",
+    "started_at": "2026-09-12T15:46:57Z",
+    "resolved_at": null,
+    "duration_seconds": null,
+    "reason": "SSL_ERROR: HTTPSConnectionPool(host='bbmpeaasthi.karnataka.gov.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+  },
+  {
+    "service_id": "gba_main_site",
+    "service_name": "BBMP / GBA Main Website",
+    "started_at": "2026-09-12T15:46:57Z",
+    "resolved_at": null,
+    "duration_seconds": null,
+    "reason": "TIMEOUT: Request timed out after 20s"
+  }
+]
