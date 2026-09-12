@@ -1,0 +1,167 @@
+# =============================================================================
+# BBMP / GBA Service Status Monitor — Service Configuration
+# =============================================================================
+# Add, remove, or edit services here. No code changes are needed.
+#
+# Fields per service:
+#   id             - unique short slug (used as a key in data files). Never
+#                    change this for an existing service once history exists,
+#                    or you'll start a fresh history for it.
+#   name           - display name shown on the dashboard
+#   url            - the exact URL that is checked
+#   category       - "Website" or "Service" (shown as a badge)
+#   check_type     - "http"          : only checks that the page loads with an
+#                                       acceptable HTTP status code
+#                    "http_keyword"  : also requires a keyword/phrase to be
+#                                       present in the returned HTML — a much
+#                                       stronger signal that the *application*
+#                                       (not just the web server) is working
+#   expect_status  - list of HTTP status codes considered "reachable"
+#                    (some govt sites return 403 to bots but are fine for
+#                    real browsers — listed explicitly per service below)
+#   keyword        - required only for check_type: http_keyword. Plain text
+#                    (case-insensitive) that must appear in the HTML.
+#   verified_note  - short, honest note on what this check actually proves.
+#                    Shown on the dashboard so nobody is misled.
+#   enabled        - true/false. Set false to pause a service without
+#                    deleting its history.
+#
+# Global settings live under `settings:` below.
+# =============================================================================
+
+settings:
+  # How long (seconds) to wait for a response before treating it as a timeout.
+  timeout_seconds: 20
+
+  # How many CONSECUTIVE failed checks before a service is declared DOWN.
+  # (protects against a single transient blip being reported as an outage)
+  fail_threshold: 2
+
+  # How many CONSECUTIVE successful checks before a DOWN service is declared
+  # RECOVERED / back UP.
+  success_threshold: 2
+
+  # If a check succeeds (site reachable) but the keyword check fails, the
+  # service is marked DEGRADED after this many consecutive keyword-mismatches,
+  # rather than immediately.
+  degraded_threshold: 2
+
+  # If a DOWN service remains down, send a reminder notification every N
+  # minutes (set to 0 to disable repeat reminders and only notify once).
+  # 720 = 12 hours between "still down" reminders.
+  repeat_notify_minutes: 720
+
+  # How many days of per-check history to retain in docs/data/history.jsonl
+  history_retention_days: 35
+
+  # Sent as the User-Agent header on every request. Identifies this project
+  # and is deliberately NOT disguised as a browser — this is a transparent,
+  # low-frequency, read-only availability checker.
+  user_agent: "BBMP-GBA-Status-Monitor/1.0 (personal uptime checker; contact: see GitHub repo)"
+
+services:
+  - id: gba_main_site
+    name: "BBMP / GBA Main Website"
+    url: "https://site.bbmp.gov.in/indexenglish.html"
+    category: "Website"
+    check_type: "http"
+    expect_status: [200]
+    keyword: null
+    verified_note: "Confirms the main citizen-facing website is reachable. Does not verify any specific service."
+    enabled: true
+
+  - id: property_tax
+    name: "Property Tax (SAS)"
+    url: "https://bbmptax.karnataka.gov.in/Default.aspx"
+    category: "Service"
+    check_type: "http_keyword"
+    expect_status: [200]
+    keyword: "Property Tax"
+    verified_note: "Confirms the property tax portal homepage loads and contains expected content. Actual tax calculation, OTP login, and payment steps are NOT exercised (would require personal data / real transactions)."
+    enabled: true
+
+  - id: e_khata
+    name: "e-Aasthi / e-Khata"
+    url: "https://bbmpeaasthi.karnataka.gov.in/"
+    category: "Service"
+    check_type: "http"
+    expect_status: [200, 403]
+    keyword: null
+    verified_note: "This portal is a JavaScript single-page application, so only front-door server reachability is verified — not whether the app fully loads or functions inside the browser."
+    enabled: true
+
+  - id: trade_license
+    name: "Trade License (New Registration)"
+    url: "https://trade.bbmpgov.in/Forms/frmTradeLicenceRegistration.aspx"
+    category: "Service"
+    check_type: "http"
+    expect_status: [200]
+    keyword: null
+    verified_note: "Confirms the new trade license registration page is reachable. Form submission and payment are not tested."
+    enabled: true
+
+  - id: trade_license_renewal
+    name: "Trade License Renewal"
+    url: "https://trade.bbmpgov.in/Forms/frmRenewalTradeRegistration.aspx"
+    category: "Service"
+    check_type: "http_keyword"
+    expect_status: [200]
+    keyword: "Trade Licence Renewal"
+    verified_note: "Confirms the renewal page loads with expected content. Form submission and payment are not tested."
+    enabled: true
+
+  - id: building_permission
+    name: "Building Permission (OBPAS)"
+    url: "https://bpas.bbmpgov.in/BPAMSClient4/Default.aspx"
+    category: "Service"
+    check_type: "http"
+    expect_status: [200]
+    keyword: null
+    verified_note: "JavaScript single-page application (AutoDCR platform) — only front-door server reachability is verified, not login or application submission."
+    enabled: true
+
+  - id: bccms
+    name: "BCCMS (Property Tax Court Case Monitoring / eNyaya)"
+    url: "https://bbmpenyaya.karnataka.gov.in/"
+    category: "Service"
+    check_type: "http"
+    expect_status: [200, 403]
+    keyword: null
+    verified_note: "Confirms the BCCMS/eNyaya objections & appeals portal is reachable."
+    enabled: true
+
+  - id: grievance_sahaaya
+    name: "Citizen Grievance (Sahaaya 2.0 / Namma Bengaluru)"
+    url: "https://bbmp.sahaaya.in/"
+    category: "Service"
+    check_type: "http"
+    expect_status: [200]
+    keyword: null
+    verified_note: "JavaScript single-page application — only front-door server reachability is verified."
+    enabled: true
+
+# -----------------------------------------------------------------------------
+# EXCLUDED / duplicate / legacy links found during research (documented, not
+# monitored, to avoid noisy or misleading results):
+#
+#   - http://www.bbmp.gov.in/            -> legacy domain, largely stale
+#                                            content; site.bbmp.gov.in is the
+#                                            actively maintained main site.
+#   - gba.karnataka.gov.in                -> the official GBA apex-body
+#                                            domain (per Wikipedia/GBA socials)
+#                                            blocks automated tooling checks
+#                                            via robots.txt for some fetchers;
+#                                            site.bbmp.gov.in is used instead
+#                                            as the monitored citizen-services
+#                                            entry point. You can add it back
+#                                            with check_type: http if your
+#                                            monitoring environment can reach
+#                                            it (GitHub Actions runners
+#                                            generally can, since curl/requests
+#                                            do not enforce robots.txt).
+#   - sahaaya2.bbmpgov.in / bbmp.gov.in
+#     grievance mirrors                   -> older mirrors of the same
+#                                            Sahaaya 2.0 grievance system;
+#                                            bbmp.sahaaya.in is the current
+#                                            citizen-facing one.
+# -----------------------------------------------------------------------------

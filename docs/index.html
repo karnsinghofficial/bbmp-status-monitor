@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BBMP / GBA Service Status</title>
+<meta name="description" content="Live status monitor for BBMP / Greater Bengaluru Authority citizen services: Property Tax, e-Khata, Trade License, Building Permission and more.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">
+      <h1>BBMP / GBA Service Status</h1>
+      <p class="subtitle">Unofficial, independent uptime monitor for Bengaluru civic e-governance services</p>
+    </div>
+    <div class="actions">
+      <button id="refreshBtn" class="btn">↻ Refresh</button>
+      <button id="checkNowBtn" class="btn btn-primary">Check all services now</button>
+    </div>
+  </header>
+
+  <section id="overallBanner" class="overall-banner overall-unknown">
+    <span id="overallIcon" class="overall-icon">⚪</span>
+    <span id="overallText">Loading status…</span>
+  </section>
+
+  <p class="meta-row">
+    <span>Last updated: <strong id="lastUpdated">—</strong></span>
+    <span class="dot">•</span>
+    <span>Auto-checked roughly every 5 minutes via GitHub Actions</span>
+  </p>
+
+  <div id="quickCheckNote" class="quick-check-note" hidden>
+    Running a quick browser-side reachability check for each service… This is an
+    <strong>approximate, client-side</strong> check (it can only tell whether your
+    browser can reach the server at all, not the real HTTP status) and is meant
+    for an instant second opinion between scheduled checks — the authoritative
+    status above comes from the server-side GitHub Actions monitor.
+  </div>
+
+  <main>
+    <section>
+      <h2>Services</h2>
+      <div id="servicesGrid" class="services-grid">
+        <!-- populated by app.js -->
+      </div>
+    </section>
+
+    <section>
+      <h2>Recent Incidents</h2>
+      <div id="incidentsList" class="incidents-list">
+        <!-- populated by app.js -->
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>About this monitor</h2>
+      <ul>
+        <li><strong>Read-only:</strong> every check is a single safe GET request. Nothing is ever submitted, logged in, or paid for on these government systems.</li>
+        <li><strong>Website reachable ≠ service usable:</strong> where noted, a check only confirms the server responds — not that a multi-step form, login, or payment flow actually works end-to-end.</li>
+        <li><strong>Confirmation thresholds:</strong> a service is only marked DOWN after multiple consecutive failed checks, and only marked recovered after multiple consecutive successful checks, to avoid false alarms from brief blips.</li>
+        <li>This is an independent personal project, not affiliated with BBMP, GBA, or the Government of Karnataka.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Source code & setup instructions on <a href="https://github.com/" id="repoLink" target="_blank" rel="noopener">GitHub</a>. Data refreshes automatically — no login required.</p>
+  </footer>
+</div>
+
+<template id="serviceCardTemplate">
+  <article class="service-card">
+    <div class="service-card-head">
+      <span class="status-dot"></span>
+      <h3 class="service-name"></h3>
+      <span class="category-badge"></span>
+    </div>
+    <div class="status-line"></div>
+    <div class="timeline" title="Last 24 hours, oldest to newest"></div>
+    <dl class="stat-grid">
+      <div><dt>Last checked</dt><dd class="stat-last-checked">—</dd></div>
+      <div><dt>Response time</dt><dd class="stat-response-time">—</dd></div>
+      <div><dt>Last success</dt><dd class="stat-last-success">—</dd></div>
+      <div><dt>Last failure</dt><dd class="stat-last-failure">—</dd></div>
+      <div><dt>Uptime 24h</dt><dd class="stat-uptime-24h">—</dd></div>
+      <div><dt>Uptime 7d</dt><dd class="stat-uptime-7d">—</dd></div>
+      <div><dt>Uptime 30d</dt><dd class="stat-uptime-30d">—</dd></div>
+      <div><dt>Outage duration</dt><dd class="stat-outage-duration">—</dd></div>
+    </dl>
+    <p class="verified-note"></p>
+    <div class="card-footer">
+      <a class="visit-link" target="_blank" rel="noopener">Open service ↗</a>
+      <span class="quick-check-result" hidden></span>
+    </div>
+  </article>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
