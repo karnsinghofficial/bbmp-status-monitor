@@ -112,3 +112,11 @@
 {"ts": "2026-09-13T15:02:20Z", "service_id": "building_permission", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1757, "error_type": ""}
 {"ts": "2026-09-13T15:02:20Z", "service_id": "bccms", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1413, "error_type": ""}
 {"ts": "2026-09-13T15:02:20Z", "service_id": "grievance_sahaaya", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 564, "error_type": "SSL_ERROR"}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "gba_main_site", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 20492, "error_type": "TIMEOUT"}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "property_tax", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1064, "error_type": ""}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "e_khata", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 713, "error_type": "SSL_ERROR"}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "trade_license", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 20040, "error_type": "TIMEOUT"}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "trade_license_renewal", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 20067, "error_type": "TIMEOUT"}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "building_permission", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1589, "error_type": ""}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "bccms", "health": "healthy", "status_after": "OPERATIONAL", "http_status": 200, "response_time_ms": 1003, "error_type": ""}
+{"ts": "2026-09-13T18:04:50Z", "service_id": "grievance_sahaaya", "health": "down", "status_after": "DOWN", "http_status": null, "response_time_ms": 512, "error_type": "SSL_ERROR"}
