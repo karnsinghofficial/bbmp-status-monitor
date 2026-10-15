@@ -35,8 +35,8 @@
     "service_id": "e_khata",
     "service_name": "e-Aasthi / e-Khata",
     "started_at": "2026-09-12T15:46:57Z",
-    "resolved_at": null,
-    "duration_seconds": null,
+    "resolved_at": "2026-10-15T18:16:37Z",
+    "duration_seconds": 2860180.0,
     "reason": "SSL_ERROR: HTTPSConnectionPool(host='bbmpeaasthi.karnataka.gov.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
   },
   {
