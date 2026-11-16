@@ -1,5 +1,13 @@
 [
   {
+    "service_id": "building_permission",
+    "service_name": "Building Permission (OBPAS)",
+    "started_at": "2026-11-16T18:49:33Z",
+    "resolved_at": null,
+    "duration_seconds": null,
+    "reason": "SSL_ERROR: HTTPSConnectionPool(host='bpas.bbmpgov.in', port=443): Max retries exceeded with url: /BPAMSClient4/Default.aspx (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)')))"
+  },
+  {
     "service_id": "test_telegram_check",
     "service_name": "TEST - Telegram Notification Check",
     "started_at": "2026-09-12T20:52:37Z",
