@@ -3,8 +3,8 @@
     "service_id": "building_permission",
     "service_name": "Building Permission (OBPAS)",
     "started_at": "2026-11-16T18:49:33Z",
-    "resolved_at": null,
-    "duration_seconds": null,
+    "resolved_at": "2026-11-18T01:41:16Z",
+    "duration_seconds": 111103.0,
     "reason": "SSL_ERROR: HTTPSConnectionPool(host='bpas.bbmpgov.in', port=443): Max retries exceeded with url: /BPAMSClient4/Default.aspx (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)')))"
   },
   {
